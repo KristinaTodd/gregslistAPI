@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Document</title>
+  <title>Greg's List</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -19,9 +19,12 @@
     </div>
   </header>
 
-  <div class="container-fluid">
+  <main class="container-fluid">
     <div class="row">
-      <div class="col-4 text-center">
+      <div class="col-4 text-center order-1">
+        <h2>CARS</h2>
+      </div>
+      <div class="col-4 text-center order-4">
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary btn-lg m-2" data-toggle="modal" data-target="#car-form">
           Add Car
@@ -80,7 +83,10 @@
         </div>
       </div>
 
-      <div class="col-4 text-center">
+      <div class="col-4 text-center order-2">
+        <h2>JOBS</h2>
+      </div>
+      <div class="col-4 text-center order-5">
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary btn-lg m-2" data-toggle="modal" data-target="#job-form">
           Add Job
@@ -134,47 +140,54 @@
           </div>
         </div>
       </div>
-      <div class="col-4 text-center">
+      <div class="col-4 text-center order-3">
+        <h2>HOUSES</h2>
+      </div>
+
+      <div class="col-4 text-center order-6">
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-lg m-2" data-toggle="modal" data-target="#job-form">
-          Add Job
+        <button type="button" class="btn btn-primary btn-lg m-2" data-toggle="modal" data-target="#house-form">
+          Add House
         </button>
 
         <!-- Modal -->
-        <div class="modal fade" id="job-form" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+        <div class="modal fade" id="house-form" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
           aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Add a Job</h5>
+                <h5 class="modal-title">Add a House</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                <form onsubmit="app.jobsController.addJob(event)">
+                <form onsubmit="app.housesController.addHouse(event)">
                   <div class="form-group">
-                    <label for="jobTitle">Job Title</label>
-                    <input type="text" name="jobTitle" class="form-control" placeholder="Enter a job title here..."
-                      required />
+                    <label for="price">Price</label>
+                    <input type="text" name="price" class="form-control" placeholder="Enter a price here..." required />
                   </div>
                   <div class="form-group">
-                    <label for="company">Company</label>
-                    <input type="text" name="company" class="form-control" placeholder="Enter a company here..." />
+                    <label for="company">Bedrooms</label>
+                    <input type="number" name="bedrooms" class="form-control" placeholder="Enter an amount here..." />
                   </div>
                   <div class="form-group">
-                    <label for="rate">Pay Rate</label>
-                    <input type="number" name="rate" class="form-control" placeholder="Enter an amount here..." />
+                    <label for="rate">Bathrooms</label>
+                    <input type="number" name="bathrooms" class="form-control" placeholder="Enter an amount here..." />
                   </div>
                   <div class="form-group">
-                    <label for="hours">Hours</label>
-                    <input type="number" name="hours" class="form-control" min="0"
+                    <label for="year">Year</label>
+                    <input type="number" name="year" class="form-control" min="0"
                       placeholder="Enter an amount here..." />
                   </div>
                   <div class="form-group">
                     <label for="description">Description</label>
                     <input type="text" name="description" class="form-control"
                       placeholder="Enter a description here..." />
+                  </div>
+                  <div class="form-group">
+                    <label for="imgUrl">Image</label>
+                    <input type="text" name="imgUrl" class="form-control" placeholder="Enter a imgUrl here..." />
                   </div>
                   <button type="submit" class="btn btn-primary">Save</button>
                 </form>
@@ -202,9 +215,9 @@
         <div class="row" id="houses"></div>
       </div>
     </div>
-  </div>
 
-  </div>
+  </main>
+
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
